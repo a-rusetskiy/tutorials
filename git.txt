@@ -19,7 +19,8 @@ git branch -a - вывод всех существующих веток
 git merge <branch_name> - присоединение ветки branch_name к текущей
 
 git clone https://github.com/<username>/<project>.git - клонирование репозитория
-git remote set-url origin git@github.com:<username>/<project>.git - подключение к удаленному репозитарию github
+git remote add origin https://github.com/<username>/<project>.git - создание подключения к удаленному репозитарию github
+git remote set-url origin git@github.com:<username>/<project>.git - настройка подключения к удаленному репозитарию github через ssh
 git remote -v - просмотр подключений 
 git remote rm origin - удаление подключения
 git push origin master - запушить ветку master
