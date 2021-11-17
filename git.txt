@@ -1,0 +1,30 @@
+git init - инициализация проекта
+git add <file> - добавление файла
+git add *.py - добавление всех питоновских файлов
+git add folder/ - добавление всех файлов из папки folder
+git add . - добавление всех файлов
+git status - статус текущего коммита
+git rm --cached <file> - удаление файла из списка ожидания коммита
+git commit -m '<comment>' - закоммитить изменения
+git log - история коммитов
+git log --oneline - история коммитов в более читабельном виде
+файлы которые игнорируются git add записываем в .gitignore, например можно записать ".*"
+git checkout <id_commit> - вернуться к предыдущему коммиту, можно просматривать файлы, но не рекомендуется их исправлять
+git revert <id_commit> - отмена коммита
+git reset <id_commit> --hard - удаление всех коммитов выше и возвращение файлов к предыдущим версиям
+git branch <branch_name> - создание нового ответвления
+git checkout <branch_name> - возвращение к последней версии проекта на ветку branch_name
+git checkout -b <branch_name> - создание новой ветки и переход туда
+git branch -a - вывод всех существующих веток
+git merge <branch_name> - присоединение ветки branch_name к текущей
+
+git clone https://github.com/<username>/<project>.git - клонирование репозитория
+git remote set-url origin git@github.com:<username>/<project>.git - подключение к удаленному репозитарию github
+git remote -v - просмотр подключений 
+git remote rm origin - удаление подключения
+git push origin master - запушить ветку master
+git pull origin master - добавить изменения на локальный компьютер
+
+добавление ssh ключа:
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys
+ssh -T git@github.com - проверка ssh ключа
