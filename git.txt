@@ -29,3 +29,7 @@ git pull origin master - добавить изменения на локальн
 добавление ssh ключа:
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys
 ssh -T git@github.com - проверка ssh ключа
+
+настройка конфигураций
+git config --global user.name '<username>'
+git config --global user.email '<your_email>'
