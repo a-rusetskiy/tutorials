@@ -4,3 +4,4 @@ conda activate <environment_name> - запустить нужное окруже
 conda install -c conda-forge jupyter - загрузить jupyter в текущее окружение
 jupyter notebook - запустить jupyter notebook
 conda install -c conda-forge <lib_name> - загрузить библиотеку (работает не всегда)
+conda list -e > requirements.txt - создание requirements
