@@ -1,0 +1,48 @@
+docker run -it --rm hello-world - проверка, что докер установлен и работает
+docker image ls - вывести названия всех образов
+docker image prune - удалить все образы без названий
+docker image rm <image_name> - удалить образ
+
+docker ps - вывести исполняемые контейнеры
+docker ps -a - вывести исполняемые/остановленные контейнеры
+docker rm <name> - удалить контейнер
+docker rm $(docker ps -a -q) - удалить все контейнеры
+docker commit <docker_name> <image_name> - создать образ из контейнера 
+docker logs <docker_name> - посмотреть что выводил контейнер
+docker logs -f <docker_name> - смотреть на вывод работы контейнера в реальном времени
+
+docker stop <docker_name> - остановить контейнер
+docker start -i <docker_name> - запустить остановленный контейнер
+docker build . -t <image_name> - собрать образ из Dockerfile
+docker build <path> -t <image_name> - собрать образ из Dockerfile, находящегося по адресу <path>
+docker run -it --name <docker_name> <image_name> - запустить контейнер из образа <image_name>
+docker run -it --rm <image_name> - запустить контейнер из образа <image_name> и удалить его после завершения работы
+echo <string> | docker run -i --name <docker_name> <image_name> - запустить контейнер и передать ему на вход строку <string>
+
+docker run -it -v <path_folder>:/data --rm <image_name> - запустить контейнер, примонтировав к нему локальную папку <path_folder> (.../data:ro --rm ... - примонтировать папку с доступом только на чтение)
+docker volume create --name <volume_name> - создать том
+docker run -it -v <volume_name>:/data: --rm <image_name> - создать том, если его не существует и запустить контейнер с томом
+docker volume ls - вывести все тома
+docker volume prune - удалить все тома
+docker inspect <docker_name> - вся информация о конфигурации контейнера
+
+#!/usr/bin/env python - приписываем shebang
+chmod a+x <file_name.py> - сделать файл исполняемым
+
+python3 -m pip install --upgrade pip - обновить pip в случае ошибки при создании requirements.txt
+pip freeze > requirements.txt - создать requirements.txt
+
+
+Пример Dockerfile:
+FROM python:3.10
+
+COPY requirements.txt .
+RUN pip install -r ./requirements.txt
+
+RUN mkdir /data # для подключения внешней папки
+
+COPY python.py .
+CMD ["./python.py"]
+
+
+https://github.com/emorozov/docker-workshop - гит с примерами
